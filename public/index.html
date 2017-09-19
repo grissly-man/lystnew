@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<base href="/">
+
+	<title>Lystit</title>
+
+	<!-- Import jQuery CSS Library -->
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<!-- BOOTSTRAP CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<!-- AJAX -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<!-- JQUERY-->
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!-- Bootstrap JS -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<!-- JS -->
+	<script src="libs/angular/angular.min.js"></script>
+	<script src="libs/angular-route/angular-route.min.js"></script>
+	<script type="text/ng-template" id="list.html"></script>
+
+	<!-- ANGULAR CUSTOM -->
+	<script src="js/controllers/MainCtrl.js"></script>
+	<script src="js/controllers/NerdCtrl.js"></script>
+	<script src="js/services/NerdService.js"></script>
+	<script src="js/controllers/GeekCtrl.js"></script>
+	<script src="js/services/GeekService.js"></script>
+	<script src="js/services/NewService.js"></script>
+	<script src="js/controllers/OperatorCtrl.js"></script>
+	<script src="js/appRoutes.js"></script>
+	<script src="js/app.js"></script>
+	<!-- CUSTOM CSS -->
+	<link rel="stylesheet" href="css/style.css"> 
+
+</head>
+<body ng-app="sampleApp" ng-controller="MainController">
+<div class="container">
+	
+	<!-- HEADER -->
+	<nav class="navbar navbar-inverse">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="/">LYSTIT</a>
+		</div>
+<!-- 		<ul class="nav navbar-nav">
+			<li><a href="/login">login</a></li>
+			<li><a href="/signup">sign up</a></li>
+		</ul> -->
+	</nav>
+
+
+<nav aria-label="Page navigation">
+  <ul class="pagination">
+
+  		<li><a value="Will" href="#" ng-click="opFunc('Will')">Will</a></li>
+	    <li><a value="Vicky" href="#" ng-click="opFunc('Vicky')">Vicky</a></li>
+	    <li><a value="Savannah" href="#" ng-click="opFunc('Savannah')">Savannah</a></li>
+	    <li><a value="Rob" href="#" ng-click="opFunc('Rob')">Rob</a></li>
+	    <li><a value="Kerry" href="#" ng-click="opFunc('Kerry')">Kerry</a></li>
+	    <li><a value="Kate" href="#" ng-click="opFunc('Kate')">Kate</a></li>
+	    <li><a value="Jon" href="#" ng-click="opFunc('Jon')">Jon</a></li>
+	    <li><a value="Gabe" href="#" ng-click="opFunc('Gabe')">Gabe</a></li>
+	    <li><a value="Brian" href="#" ng-click="opFunc('Chris')">Chris</a></li>
+	    <li><a value="Brian" href="#" ng-click="opFunc('Brian')">Brian</a></li>
+	    <li><a value="Blake" href="#" ng-click="opFunc('Blake')">Blake</a></li>
+	    <li><a value="Andres" href="#" ng-click="opFunc('Andres')">Andres</a></li>
+
+  </ul>
+</nav>
+
+
+
+	<!-- ANGULAR DYNAMIC CONTENT -->
+	<div ng-view></div>
+
+</div>
+</body>
+</html>

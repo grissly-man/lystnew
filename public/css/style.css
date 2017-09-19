@@ -1,0 +1,20 @@
+body { padding-top:30px; background-color: #fff;}
+
+a .navbar-brand{text-decoration-color: #000;}
+
+.row {
+	text-align: left;
+}
+
+#myInput {
+	padding: 5px 60px;
+}
+
+#myBtn {
+	position:relative;
+}
+
+.dropdown {
+	position:relative;
+}
+

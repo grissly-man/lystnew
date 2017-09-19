@@ -1,0 +1,48 @@
+
+<div class="row">
+<!-- TEXT BOX & BUTTON -->
+	<div class="col-xs-3">
+		<input id="myInput" type="text" ng-model="todo.description" placeholder="add a new task">
+	</div>
+	<div>
+		<button id="myBtn" type="submit" class="btn btn-success" ng-click="saveFunc()">save</button>
+	</div>
+	<div class="dropdown col-xs-3">
+		<select class="form-control"  ng-model="todo.name">
+		    <option value="" disabled selected>assign to a person</option>
+		    <option value="Andres">Andres</option>
+		    <option value="Blake">Blake</option>
+		    <option value="Brian">Brian</option>
+		    <option value="Chris">Chris</option>
+		    <option value="Gabe">Gabe</option>
+		    <option value="Jon">Jon</option>
+		    <option value="Kate">Kate</option>
+		    <option value="Kerry">Kerry</option>
+		    <option value="Rob">Rob</option>
+		    <option value="Savannah">Savannah</option>
+		    <option value="Vicky">Vicky</option>
+		    <option value="Will">Will</option>
+		</select>
+	</div>
+</div>
+<!-- TEXTBOX & BUTTON END -->
+
+<!--PROGRESS & COMPLETE LISTS -->
+	<div id="tasks">
+	<h4>IN PROGRESS</h4>
+			<ul ng-repeat="x in todos">
+				<div ng-show="x.status == 'in-progress'">{{x.description}}<button ng-click="editFunc(x._id)">edit</button><button ng-click="deleteFunc(x._id)">delete</button></div>
+				<!-- <button ng-click="edit($index)">move</button> -->
+			</ul>
+
+	<h4>COMPLETE</h4>
+		<ul ng-repeat="x in todos">
+			<div ng-show="x.status == 'complete'">{{x.description}}<button ng-click="editFunc(x._id)">edit</button><button ng-click="deleteFunc(x._id)">delete</button>
+			</div>
+		</ul>
+	</div>
+<!-- END LISTS -->
+
+
+
+

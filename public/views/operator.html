@@ -1,0 +1,16 @@
+	<div id="tasks">
+	<h4>IN PROGRESS</h4>
+			<ul ng-repeat="x in todos">
+				<div ng-if = "x.status = 'in-progress' " ng-show="x.name == activeNew ">{{x.description}}<button ng-click="editFunc(x._id)">edit</button><button ng-click="deleteFunc(x._id)">delete</button></div>
+			</ul>
+	
+
+	<h4>COMPLETE</h4>
+			<ul ng-repeat="x in todos">
+				<div ng-if = "x.status = 'complete' " ng-show="x.name == activeNew ">{{x.description}}<button ng-click="editFunc(x._id)">edit</button><button ng-click="deleteFunc(x._id)">delete</button></div>
+			</ul>
+	</div>
+
+
+
+
