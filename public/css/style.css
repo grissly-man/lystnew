@@ -56,6 +56,11 @@ body {
 	float: right;
 }
 
+.form-control{
+	position: relative;
+	float: right;
+}
+
 /* IN PROGRESS & COMPLETE */
 
 h4{

@@ -2,29 +2,32 @@
 <!-- TEXT BOX & BUTTON -->
 <div class="row">
 	<div class="col-md-6 col-xs-12">
-    <div class="input-group">
-      <input type="text" class="form-control" aria-label="...">
-      <div class="input-group-btn">
-        <button class="btn btn-default" type="button" ng-click="saveFunc()">save</button>
-        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">for <span class="caret"></span></button>
-        <ul class="dropdown-menu dropdown-menu-right" ng-model="todo.name">
-          <li><a value="Andres">Andres</a></li>
-          <li><a value="Blake">Blake</a></li>
-          <li><a value="Brian">Brian</a></li>
-          <li><a value="Chris">Chris</a></li>
-          <li><a value="Gabe">Gabe</a></li>
-          <li><a value="Jon">Jon</a></li>
-          <li><a value="Kate">Kate</a></li>
-          <li><a value="Kerry">Kerry</a></li>
-          <li><a value="Rob">Rob</a></li>
-          <li><a value="Savannah">Savannah</a></li>
-          <li><a value="Vicky">Vicky</a></li>
-          <li><a value="Will">Will</a></li>
-        </ul>
-      </div>
+    	<div class="input-group">
+      		<input type="text" class="form-control" aria-label="..." ng-model="todo.description">
+     		<div class="input-group-btn">
+        		<button class="btn btn-default" type="button" ng-click="saveFunc()">save</button>
+        	</div>
+		        <div class="formdrop">
+					<select class="form-control"  ng-model="todo.name">
+					    <option value="" disabled selected>assign to:</option>
+					    <option value="Andres">Andres</option>
+					    <option value="Blake">Blake</option>
+					    <option value="Brian">Brian</option>
+					    <option value="Chris">Chris</option>
+					    <option value="Gabe">Gabe</option>
+					    <option value="Jon">Jon</option>
+					    <option value="Kate">Kate</option>
+					    <option value="Kerry">Kerry</option>
+					    <option value="Rob">Rob</option>
+					    <option value="Savannah">Savannah</option>
+					    <option value="Vicky">Vicky</option>
+					    <option value="Will">Will</option>
+					</select>
+				</div>
+        </div>
     </div>
-  </div>
 </div>
+
 
 
 <!-- VIEW TASKS DROPDOWN -->
@@ -56,7 +59,7 @@
 <div class="inprogress col-lg-6 col-xs-12">
 	<h4>IN PROGRESS</h4>
 		<ul ng-repeat="x in todos">
-		  <li ng-show="x.status =='in-progress">{{x.description}}</li>
+		  <li ng-show="x.status == 'in-progress'">{{x.description}}</li>
 		  	<div class="input-group-btn">
 	       		 <button class="btn btn-default" id="deleteBtn" type="button" ng-click="deleteFunc()">delete</button>
 	       		 <button type="button" class="btn btn-default" id="doneBtn" ng-click="editFunc(x._id)">done</button>
