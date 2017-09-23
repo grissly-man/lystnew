@@ -1,16 +1,23 @@
-	<div id="tasks">
+<div class="inprogress col-lg-6 col-xs-12">
 	<h4>IN PROGRESS</h4>
-			<ul ng-repeat="x in todos">
-				<div ng-if = "x.status = 'in-progress' " ng-show="x.name == activeNew ">{{x.description}}<button ng-click="editFunc(x._id)">edit</button><button ng-click="deleteFunc(x._id)">delete</button></div>
-			</ul>
+		<ul ng-repeat="x in todos">
+			<div ng-if = "x.status = 'in-progress' " ng-show="x.name == activeNew " id="progressOp">{{x.description}}<div class="input-group-btn">
+				<button class="btn btn-default" id="deleteBtn" type="button" ng-click="deleteFunc(x._id)">delete</button>
+				<button class="btn btn-default" id="doneBtn" type="button" ng-click="editFunc(x._id)">done</button></div>
+			</div>
+		</ul>
+</div>
 	
-
-	<h4>COMPLETE</h4>
-			<ul ng-repeat="x in todos">
-				<div ng-if = "x.status = 'complete' " ng-show="x.name == activeNew ">{{x.description}}<button ng-click="editFunc(x._id)">edit</button><button ng-click="deleteFunc(x._id)">delete</button></div>
-			</ul>
-	</div>
-
+<div class="complete col-lg-6 col-xs-12">
+	<h4>DONE</h4>
+		<ul ng-repeat="x in todos">
+			<div ng-if="x.status == 'complete'" ng-show="x.name == activeNew" id="completedLi">{{x.description}}
+				<div class="input-group-btn">
+					<button class="btn btn-default" id="deleteBtn" type="button" ng-click="deleteFunc(x._id)">delete</button>
+				</div>
+			</div>
+		</ul>
+</div>
 
 
 

@@ -1,47 +1,81 @@
 
-<div class="row">
 <!-- TEXT BOX & BUTTON -->
-	<div class="col-xs-3">
-		<input id="myInput" type="text" ng-model="todo.description" placeholder="add a new task">
-	</div>
-	<div>
-		<button id="myBtn" type="submit" class="btn btn-success" ng-click="saveFunc()">save</button>
-	</div>
-	<div class="dropdown col-xs-3">
-		<select class="form-control"  ng-model="todo.name">
-		    <option value="" disabled selected>assign to a person</option>
-		    <option value="Andres">Andres</option>
-		    <option value="Blake">Blake</option>
-		    <option value="Brian">Brian</option>
-		    <option value="Chris">Chris</option>
-		    <option value="Gabe">Gabe</option>
-		    <option value="Jon">Jon</option>
-		    <option value="Kate">Kate</option>
-		    <option value="Kerry">Kerry</option>
-		    <option value="Rob">Rob</option>
-		    <option value="Savannah">Savannah</option>
-		    <option value="Vicky">Vicky</option>
-		    <option value="Will">Will</option>
-		</select>
+<div class="row">
+	<div class="col-md-6 col-xs-12">
+    <div class="input-group">
+      <input type="text" class="form-control" aria-label="...">
+      <div class="input-group-btn">
+        <button class="btn btn-default" type="button" ng-click="saveFunc()">save</button>
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">for <span class="caret"></span></button>
+        <ul class="dropdown-menu dropdown-menu-right" ng-model="todo.name">
+          <li><a value="Andres">Andres</a></li>
+          <li><a value="Blake">Blake</a></li>
+          <li><a value="Brian">Brian</a></li>
+          <li><a value="Chris">Chris</a></li>
+          <li><a value="Gabe">Gabe</a></li>
+          <li><a value="Jon">Jon</a></li>
+          <li><a value="Kate">Kate</a></li>
+          <li><a value="Kerry">Kerry</a></li>
+          <li><a value="Rob">Rob</a></li>
+          <li><a value="Savannah">Savannah</a></li>
+          <li><a value="Vicky">Vicky</a></li>
+          <li><a value="Will">Will</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- VIEW TASKS DROPDOWN -->
+<div class="row2">
+	<div class="col-md-6 col-xs-12">
+	  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+	    view person's tasks
+	    <span class="caret"></span>
+	  </button>
+	  <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+	  	  	<li><a value="Will" href="#" ng-click="opFunc('Will')">Will</a></li>
+		    <li><a value="Vicky" href="#" ng-click="opFunc('Vicky')">Vicky</a></li>
+		    <li><a value="Savannah" href="#" ng-click="opFunc('Savannah')">Savannah</a></li>
+		    <li><a value="Rob" href="#" ng-click="opFunc('Rob')">Rob</a></li>
+		    <li><a value="Kerry" href="#" ng-click="opFunc('Kerry')">Kerry</a></li>
+		    <li><a value="Kate" href="#" ng-click="opFunc('Kate')">Kate</a></li>
+		    <li><a value="Jon" href="#" ng-click="opFunc('Jon')">Jon</a></li>
+		    <li><a value="Gabe" href="#" ng-click="opFunc('Gabe')">Gabe</a></li>
+		    <li><a value="Brian" href="#" ng-click="opFunc('Chris')">Chris</a></li>
+		    <li><a value="Brian" href="#" ng-click="opFunc('Brian')">Brian</a></li>
+		    <li><a value="Blake" href="#" ng-click="opFunc('Blake')">Blake</a></li>
+		    <li><a value="Andres" href="#" ng-click="opFunc('Andres')">Andres</a></li>
+	  </ul>
 	</div>
 </div>
-<!-- TEXTBOX & BUTTON END -->
+
 
 <!--PROGRESS & COMPLETE LISTS -->
-	<div id="tasks">
+<div class="inprogress col-lg-6 col-xs-12">
 	<h4>IN PROGRESS</h4>
-			<ul ng-repeat="x in todos">
-				<div ng-show="x.status == 'in-progress'">{{x.description}}<button ng-click="editFunc(x._id)">edit</button><button ng-click="deleteFunc(x._id)">delete</button></div>
-				<!-- <button ng-click="edit($index)">move</button> -->
-			</ul>
-
-	<h4>COMPLETE</h4>
 		<ul ng-repeat="x in todos">
-			<div ng-show="x.status == 'complete'">{{x.description}}<button ng-click="editFunc(x._id)">edit</button><button ng-click="deleteFunc(x._id)">delete</button>
-			</div>
+		  <li ng-show="x.status =='in-progress">{{x.description}}</li>
+		  	<div class="input-group-btn">
+	       		 <button class="btn btn-default" id="deleteBtn" type="button" ng-click="deleteFunc()">delete</button>
+	       		 <button type="button" class="btn btn-default" id="doneBtn" ng-click="editFunc(x._id)">done</button>
+	    	</div>
 		</ul>
-	</div>
-<!-- END LISTS -->
+</div>
+
+<div class="complete col-lg-6 col-xs-12">
+	<h4>DONE</h4>
+		<ul ng-repeat="x in todos">
+			<li ng-show="x.status == 'complete'" id="completedLi">{{x.description}}
+				<div class="input-group-btn">
+					<button class="btn btn-default" id="deleteBtn" type="button" ng-click="deleteFunc(x._id)">delete</button>
+				</div>
+			</li>
+		</ul>
+</div>
+
+
 
 
 
