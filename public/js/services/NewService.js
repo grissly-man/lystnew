@@ -1,7 +1,7 @@
 angular.module('NewService', []).service('New', ['$http', function($http, $scope, New) {
 
 // var URL = 'https://calm-ocean-58797.herokuapp.com';
-var URL = 'https://lystit.herokuapp.com';
+var URL = 'https://lystit-api.herokuapp.com';
 var operator;
 	return {
 //GET ALL TODOS
