@@ -59,11 +59,12 @@
 <div class="inprogress col-lg-6 col-xs-12">
 	<h4>IN PROGRESS</h4>
 		<ul ng-repeat="x in todos">
-		  <li ng-show="x.status == 'in-progress'">{{x.description}}</li>
+		  <li ng-show="x.status == 'in-progress'" id="progressLi">{{x.description}}
 		  	<div class="input-group-btn">
 	       		 <button class="btn btn-default" id="deleteBtn" type="button" ng-click="deleteFunc()">delete</button>
 	       		 <button type="button" class="btn btn-default" id="doneBtn" ng-click="editFunc(x._id)">done</button>
 	    	</div>
+	      </li>
 		</ul>
 </div>
 

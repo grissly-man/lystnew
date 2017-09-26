@@ -70,15 +70,6 @@ h4{
 	font-weight: bold;
 }
 
-.inprogress li{
-	list-style-type: none;
-	border: 1px solid #000;
-	background-color: #FFE5CF;
-	width: 300px;
-	border-radius: 2px;
-	padding: 5px;
-	height: auto;
-}
 
 .input-group-btn #deleteBtn{
 	border-color: #000;
@@ -91,6 +82,16 @@ h4{
 	border-color: #000;
 	margin-top: 3px;
 	border-radius: 3px;
+}
+
+.inprogress #progressLi{
+	list-style-type: none;
+	border: 1px solid #000;
+	background-color: #FFE5CF;
+	width: 300px;
+	border-radius: 2px;
+	padding: 5px;
+	height: auto;
 }
 
 .complete #completedLi{
