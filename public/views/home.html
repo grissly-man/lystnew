@@ -61,7 +61,7 @@
 		<ul ng-repeat="x in todos">
 		  <li ng-show="x.status == 'in-progress'" id="progressLi">{{x.description}}
 		  	<div class="input-group-btn">
-	       		 <button class="btn btn-default" id="deleteBtn" type="button" ng-click="deleteFunc()">delete</button>
+	       		 <button class="btn btn-default" id="deleteBtn" type="button" ng-click="deleteFunc(x._id)">delete</button>
 	       		 <button type="button" class="btn btn-default" id="doneBtn" ng-click="editFunc(x._id)">done</button>
 	    	</div>
 	      </li>
