@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = function(app) {
 
 	// server routes ===========================================================
@@ -7,7 +9,7 @@ module.exports = function(app) {
 	// frontend routes =========================================================
 	// route to handle all angular requests
 	app.get('*', function(req, res) {
-		res.sendFile('./public/index.html');
+		res.sendFile(path.resolve(__dirname, "../public/index.html"));
 	});
 
 };

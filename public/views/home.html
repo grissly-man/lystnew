@@ -56,24 +56,26 @@
 
 
 <!--PROGRESS & COMPLETE LISTS -->
-<div class="inprogress col-lg-6 col-xs-12">
+<div class="col-lg-6 col-xs-12">
 	<h4>IN PROGRESS</h4>
 		<ul ng-repeat="x in todos">
-		  <li ng-show="x.status == 'in-progress'" id="progressLi">{{x.description}}
+		  <li ng-class="x.status || 'in-progress'" ng-show="!x.completed">{{x.description}}
 		  	<div class="input-group-btn">
-	       		 <button class="btn btn-default" id="deleteBtn" type="button" ng-click="deleteFunc(x._id)">delete</button>
-	       		 <button type="button" class="btn btn-default" id="doneBtn" ng-click="editFunc(x._id)">done</button>
+	       		 <button ng-show="!x.status" class="btn btn-default" id="deleteBtn" type="button" ng-click="deleteFunc(x)">delete</button>
+	       		 <button ng-show="!x.status" type="button" class="btn btn-default" id="doneBtn" ng-click="editFunc(x)">done</button>
+	       		 <button ng-show="x.status" type="button" class="btn btn-default">{{x.action}}</button>
 	    	</div>
 	      </li>
 		</ul>
 </div>
 
-<div class="complete col-lg-6 col-xs-12">
+<div class="col-lg-6 col-xs-12">
 	<h4>DONE</h4>
 		<ul ng-repeat="x in todos">
-			<li ng-show="x.status == 'complete'" id="completedLi">{{x.description}}
+			<li ng-class="x.status || 'complete'" ng-show="x.completed">{{x.description}}
 				<div class="input-group-btn">
-					<button class="btn btn-default" id="deleteBtn" type="button" ng-click="deleteFunc(x._id)">delete</button>
+					<button ng-show="!x.status" class="btn btn-default" id="deleteBtn" type="button" ng-click="deleteFunc(x)">delete</button>
+					<button ng-show="x.status" class="btn btn-default" type="button">{{x.action}}</button>
 				</div>
 			</li>
 		</ul>

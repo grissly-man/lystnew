@@ -84,7 +84,7 @@ h4{
 	border-radius: 3px;
 }
 
-.inprogress #progressLi{
+.in-progress {
 	list-style-type: none;
 	border: 1px solid #000;
 	background-color: #FFE5CF;
@@ -94,7 +94,27 @@ h4{
 	height: auto;
 }
 
-.complete #completedLi{
+.loading {
+	list-style-type: none;
+	border: 1px solid #000;
+	background-color: #CCCCCC;
+	width: 300px;
+	border-radius: 2px;
+	padding: 5px;
+	height: auto;
+}
+
+.error {
+	list-style-type: none;
+	border: 1px solid #000;
+	background-color: #f2dede;
+	width: 300px;
+	border-radius: 2px;
+	padding: 5px;
+	height: auto;
+}
+
+.complete {
 	list-style-type: none;
 	border: 1px solid #000;
 	/*background-color: #F6AD77;*/
